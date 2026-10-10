@@ -1,3 +1,4 @@
+import { fetchCollection } from '../api.js'
 import CollectionPage from './CollectionPage.jsx'
 
 const columns = [
@@ -9,6 +10,11 @@ const columns = [
 
 export default function Teams() {
   return (
-    <CollectionPage columns={columns} endpoint="/api/teams/" title="Teams" />
+    <CollectionPage
+      columns={columns}
+      endpoint="/api/teams/"
+      fetch={fetchCollection}
+      title="Teams"
+    />
   )
 }

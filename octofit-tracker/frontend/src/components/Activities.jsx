@@ -1,3 +1,4 @@
+import { fetchCollection } from '../api.js'
 import CollectionPage from './CollectionPage.jsx'
 
 const columns = [
@@ -14,6 +15,7 @@ export default function Activities() {
     <CollectionPage
       columns={columns}
       endpoint="/api/activities/"
+      fetch={fetchCollection}
       title="Activities"
     />
   )

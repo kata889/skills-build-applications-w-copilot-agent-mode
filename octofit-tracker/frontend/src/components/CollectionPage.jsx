@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { fetchCollection } from '../api.js'
 
 function displayValue(value) {
   if (value === null || value === undefined || value === '') {
@@ -22,7 +21,7 @@ function displayValue(value) {
   return String(value)
 }
 
-export default function CollectionPage({ columns, endpoint, title }) {
+export default function CollectionPage({ columns, endpoint, fetch, title }) {
   const [records, setRecords] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
@@ -32,7 +31,7 @@ export default function CollectionPage({ columns, endpoint, title }) {
 
     async function loadRecords() {
       try {
-        setRecords(await fetchCollection(endpoint, controller.signal))
+        setRecords(await fetch(endpoint, controller.signal))
       } catch (loadError) {
         if (loadError.name !== 'AbortError') {
           setError(loadError.message)
@@ -46,7 +45,7 @@ export default function CollectionPage({ columns, endpoint, title }) {
 
     loadRecords()
     return () => controller.abort()
-  }, [endpoint])
+  }, [endpoint, fetch])
 
   return (
     <section aria-labelledby="collection-title">
