@@ -1,0 +1,120 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at top right, rgba(97, 218, 251, 0.12), transparent 34rem),
+    #f5f8fb;
+}
+
+.app-navbar {
+  background: #17324d;
+  box-shadow: 0 0.25rem 1rem rgba(16, 42, 67, 0.12);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.brand-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.navbar-nav .nav-link {
+  border-radius: 0.5rem;
+  margin: 0.15rem;
+  padding-inline: 0.8rem;
+}
+
+.navbar-nav .nav-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.app-shell main {
+  flex: 1;
+}
+
+.eyebrow {
+  color: #287c8e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dashboard-panel,
+.data-table-wrap,
+.empty-state {
+  border: 1px solid #e1e9ef;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.75rem 2rem rgba(16, 42, 67, 0.06);
+}
+
+.dashboard-panel h1 {
+  max-width: 42rem;
+  color: #17324d;
+}
+
+.dashboard-link {
+  display: flex;
+  min-height: 4.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid #e1e9ef;
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  color: #17324d;
+  text-decoration: none;
+  transition:
+    border-color 150ms ease,
+    transform 150ms ease,
+    background-color 150ms ease;
+}
+
+.dashboard-link:hover,
+.dashboard-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: #63b3c3;
+  background: #f2fbfc;
+  color: #17324d;
+}
+
+.data-table-wrap {
+  overflow: hidden;
+}
+
+.data-table-wrap thead th {
+  background: #edf4f7;
+  color: #17324d;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.data-table-wrap td {
+  min-width: 7rem;
+  max-width: 24rem;
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    display: none;
+    padding-top: 0.75rem;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+}
